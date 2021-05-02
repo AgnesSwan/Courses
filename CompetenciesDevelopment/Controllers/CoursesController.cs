@@ -1,10 +1,10 @@
 ﻿
-using CompetenciesDevelopment.Models;
+using Courses.Models;
 using System.Linq;
 using System.Web.Http;
 using System;
 
-namespace CompetenciesDevelopment.Controllers
+namespace Courses.Controllers
 {
     public class CoursesController : ApiController
     {

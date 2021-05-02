@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CompetenciesDevelopment.Models
+namespace Courses.Models
 {
     using System;
     using System.Data.Entity;
