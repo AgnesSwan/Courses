@@ -1,14 +1,14 @@
 ﻿
-using Courses.Models;
 using System.Linq;
 using System.Web.Http;
 using System;
+using CompetenciesDevelopment.Models;
 
 namespace Courses.Controllers
 {
     public class CoursesController : ApiController
     {
-        KursyEntities db = new KursyEntities();
+        KursyEntities1 db = new KursyEntities1();
 
         [HttpGet]
         public IHttpActionResult getCourses()
@@ -25,7 +25,7 @@ namespace Courses.Controllers
         [ActionName("Dodaj")]
         [HttpPost]
 
-        public IHttpActionResult postAddCourse([FromBody] Cours newCourse)
+        public IHttpActionResult PostAdd([FromBody] Course newCourse)
         {
             //sprawdzenie czy model jest poprawny
             if(!ModelState.IsValid)
@@ -53,14 +53,15 @@ namespace Courses.Controllers
         [ActionName("Edytuj")]
         [HttpPut]
 
-        public IHttpActionResult putModify([FromBody] Cours modifiedCourse, int id)
+        public IHttpActionResult putModify([FromBody] Course modifiedCourse, int id)
         {
             //sprawdzenie czy model jest poprawny
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            db.Entry(modifiedCourse).State = System.Data.Entity.EntityState.Modified;
+
+            //dodac linijke
             db.SaveChanges();
             return Ok("Zmodyfikowano kurs");
         }
